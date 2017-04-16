@@ -1,0 +1,25 @@
+.todo-item {
+    padding: 5px;
+    &.done .todo-item-text{
+        text-decoration: line-through;
+        color: #ccc;
+    }
+}
+.todo-remove {
+    color: #f00;
+    cursor: pointer;
+    padding: 0 3px;
+    border: 2px solid #f00;
+    background: #fff;
+    width: 16px;
+    text-align: center;
+}
+.todo-done {
+    color: #3F51B5;
+    cursor: pointer;
+    border: 2px solid #3F51B5;
+    background: #fff;
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+}
