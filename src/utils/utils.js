@@ -1,3 +1,4 @@
+import jq from '../libs/jquery.js';
 export default {
     dateFormat: (date, format) => {
         if (typeof date === 'string') {
@@ -28,5 +29,6 @@ export default {
             return all;
         });
         return format;
-    }
+    },
+    $: jq
 }
