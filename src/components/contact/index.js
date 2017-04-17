@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from '.././sidebar/index';
 import style from './index.scss';
-import {dateFormat, $} from '../../utils/utils.js';
+import {dateFormat} from '../../utils/utils.js';
 class Contact extends React.Component {
     
     constructor(props){
