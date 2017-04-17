@@ -55,7 +55,7 @@ class Topic extends React.Component {
                                 <ul className="reply-items">
                                 {(topic.replies || []).map((reply, index) => {
                                     return <li className="reply-item" key={index}>
-                                        <a href="jjavascript:void(0)"><img width="30" height="30" src={reply.author.avatar_url} alt="" /></a>&nbsp;<a className="reply-loginname" href="#">{reply.author.loginname}</a><br />
+                                        <a href="jjavascript:void(0)"><img width="30" height="30" src={reply.author.avatar_url} alt="" /></a>&nbsp;<a className="reply-loginname" href="#">{reply.author.loginname}</a>&nbsp;<span className="reply-floor">{index + 1}楼 • {getDateDiff(reply.create_at)}</span><br />
                                         <span dangerouslySetInnerHTML={{__html: reply.content}}></span>
                                     </li>
                                 })}

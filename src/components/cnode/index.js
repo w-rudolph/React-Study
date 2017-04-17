@@ -41,8 +41,8 @@ class Cnode extends React.Component{
                                     <span>
                                         <span className="reply_count">{topic.reply_count}</span> / <span className="visit_count">{topic.visit_count}</span>
                                     </span>&nbsp;
-                                    {topic.top ? <span className="put_top">置顶</span> : ""}&nbsp;
-                                    {!topic.top && topic.good ? <span className="put_good">精华</span> : ""}&nbsp;
+                                    {topic.top ? <span className="put_top">置顶</span> : ""}
+                                    {!topic.top && topic.good ? <span className="put_good">精华</span> : ""}
                                     {!topic.top && !topic.good ? <span className="topic_tab">{this.getTopicTab(topic.tab)}</span> : ''}&nbsp;
                                     <span className="topic-title">
                                         <a title={topic.title} href={'#/cnode/topic/' + topic.id}>{topic.title}</a>
