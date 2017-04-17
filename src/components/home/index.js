@@ -1,4 +1,5 @@
 import React from 'react';
+import Sidebar from '.././sidebar/index';
 import './index.scss';
 class Home extends React.Component{
     constructor(props){
@@ -51,7 +52,9 @@ class Home extends React.Component{
     }
     render(){
         return (
-            <div id="main">
+            <div id="page">
+                <Sidebar path="#/" />
+                <div id="main">
                 Todo List:
                 <div>&nbsp;</div>
                 <div id="todos-status">
@@ -70,6 +73,7 @@ class Home extends React.Component{
                     <input type="" ref="todoInput" />
                     <button onClick={this.addOne.bind(this)}>添加</button>
                 </div>
+            </div>
             </div>
         )
     }
