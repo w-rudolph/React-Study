@@ -28,18 +28,19 @@ class Home extends React.Component {
             done: false
         };
         this.setState({
-            todos: {
+            todos: [
                 ...todos,
                 newTodo
-            }
+            ]
         });
         this.refs.todoInput.value = "";
         this.save();
     }
     remove(index) {
         const { todos } = this.state;
+        todos.splice(index, 1);
         this.setState({
-            todos: todos.splice(index, 1)
+            todos: todos
         })
         this.save();
     }
