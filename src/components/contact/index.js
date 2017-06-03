@@ -33,10 +33,10 @@ class Contact extends React.Component {
             date: Date.now()
         };
         this.setState({
-            contacts: {
+            contacts: [
                 newContact,
                 ...contacts
-            }
+            ]
         });
         this.refs.contactForm.reset();
         this.save();
