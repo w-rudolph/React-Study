@@ -22,24 +22,35 @@ class Home extends React.Component{
             alert('Empty value is not allowed!');
             return;
         }
-        this.state.todos.push({
+        const { todos } = this.state;
+        const newTodo = {
             text: todoValue,
-            done: false
+            done: false 
+        };
+        this.setState({
+            todos: {
+                ...todos,
+                newTodo
+            }
         });
         this.refs.todoInput.value = "";
-        this.forceUpdate();
         this.save();
     }
     remove(index){
-        this.state.todos.splice(index, 1);
-        this.forceUpdate();
+        const { todos } = this.state;
+        this.setState({
+            todos: todos.splice(index, 1)
+        })
         this.save();
     }
     done(index){
-        this.state.todos.forEach((todo, idx) => {
+        let { todos } = this.state;
+        todos.forEach((todo, idx) => {
             if(index === idx) todo.done = !todo.done;
         })
-        this.forceUpdate();
+        this.setState({
+            todos: todos
+        })
         this.save();
     }
     getDoneItemCount(){

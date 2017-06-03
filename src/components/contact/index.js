@@ -7,7 +7,6 @@ class Contact extends React.Component {
     constructor(props){
         super(props);
         this.state = this.getInitialState();
-        //console.log($); // jquery
     }
     getInitialState(){
         var fields = [
@@ -25,15 +24,21 @@ class Contact extends React.Component {
     }
     formSubmit(e){
         e.preventDefault();
-        this.state.contacts.unshift({
+        let { contacts } = this.state;
+        let newContact = {
             name: this.refs.name.value,
             email: this.refs.email.value,
             website: this.refs.website.value,
             note: this.refs.note.value,
             date: Date.now()
+        };
+        this.setState({
+            contacts: {
+                newContact,
+                ...contacts
+            }
         });
         this.refs.contactForm.reset();
-        this.forceUpdate();
         this.save();
     }
     save(contacts){

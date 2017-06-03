@@ -20,9 +20,7 @@ class Topic extends React.Component {
         $.get(API.getTopic + '/' + topic_id)
         .done(res => {
             if(res.success) {
-                //console.log(res.data);
-                this.state.topic = res.data;
-                this.forceUpdate();
+                this.setState({topic: res.data});
             }
         })
     }

@@ -14,9 +14,7 @@ class Cnode extends React.Component{
         $.get(API.topics)
         .done((res) => {
             if(res.success) {
-                //console.log(res.data.length ? res.data : 'No Data');
-                this.state.topics = res.data;
-                this.forceUpdate();
+                this.setState({topics: res.data});
             }
         })
     }
