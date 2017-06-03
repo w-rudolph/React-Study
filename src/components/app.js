@@ -5,7 +5,7 @@ import Home from './home/index';
 import Contact from './contact/index';
 import Cnode from './cnode/index';
 import Topic from './cnode/topic';
- 
+
 ReactDom.render((
     <Router history={hashHistory}>
         <Route path='/' component={Home}></Route>
