@@ -1,6 +1,7 @@
 'use strict';
 
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -8,7 +9,7 @@ module.exports = {
     entry: __dirname + '/src/entry.js',
     output: {
         path: __dirname + '/build',
-        filename: 'bundle.js'
+        filename: 'bundle[hash].js'
     },
 
     module: {
@@ -32,7 +33,12 @@ module.exports = {
     },
 
     plugins: [
-        new ExtractTextPlugin('bundle.css')
+        new ExtractTextPlugin('bundle.css'),
+        new HtmlWebpackPlugin({
+            template:'./index.html',
+            filename: "index.html",
+            inject: true
+        }),
     ]
 
 }
